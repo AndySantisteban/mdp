@@ -1,0 +1,18 @@
+.bottom {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 0 10px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
