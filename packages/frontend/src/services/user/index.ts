@@ -2,13 +2,13 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import {
   UserCreateInterceptor,
-  UserIdInterceptor,
+  UserIdInterceptor
 } from "../../interceptors/user.interceptor";
 
 class UserServices {
   async getUsers() {
     try {
-      const response = await axios.get("http://localhost:4000/v1/users");
+      const response = await axios.get("http://34.207.146.61:4000/v1/users");
       toast.success(response.data.message);
       return response.data;
     } catch (e) {
@@ -21,7 +21,7 @@ class UserServices {
   async getUser(id: string) {
     UserIdInterceptor(id);
     try {
-      const response = await axios.get(`http://localhost:4000/v1/users/${id}`);
+      const response = await axios.get(`http://34.207.146.61:4000/v1/users/${id}`);
       toast.success(response.data.message);
       return response.data;
     } catch (error) {
@@ -34,7 +34,7 @@ class UserServices {
   async createUser(name: string, surname: string, date: string) {
     UserCreateInterceptor(name, surname, date);
     try {
-      const response = await axios.post(`http://localhost:4000/v1/user`, {
+      const response = await axios.post(`http://34.207.146.61:4000/v1/user`, {
         name,
         surname,
         date: date,
